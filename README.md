@@ -82,11 +82,15 @@ The API will be available at `http://localhost:3000`.
 
 ## API Endpoints
 
+All endpoints are prefixed with `/auth` and expect `Content-Type: application/json`.
+Authentication-related endpoints use AWS Cognito via the Admin authentication flow.
+
 1. Register User
 
 - Endpoint: POST /auth/register
 - Description: Registers a new user in the Cognito User Pool.
-- Request Body:
+
+Request Body:
 
 ```json
 {
@@ -95,7 +99,7 @@ The API will be available at `http://localhost:3000`.
 }
 ```
 
-- Response:
+Response:
 
 ```json
 {
@@ -112,7 +116,8 @@ The API will be available at `http://localhost:3000`.
 
 - Endpoint: POST /auth/verify
 - Description: Confirms user sign-up using a verification code.
-- Request Body:
+
+Request Body:
 
 ```json
 {
@@ -125,15 +130,17 @@ The API will be available at `http://localhost:3000`.
 
 - Endpoint: `POST /auth/login`
 - Description: Authenticates a user and returns tokens.
-- Request Body:
 
-````json
+Request Body:
+
+```json
 {
   "email": "user@example.com",
   "password": "password123"
 }
+```
 
-- Response:
+Response:
 
 ```json
 {
@@ -141,19 +148,20 @@ The API will be available at `http://localhost:3000`.
   "IdToken": "id-token",
   "RefreshToken": "refresh-token"
 }
-````
+```
 
 4. Get User Info
 
 - Endpoint: GET /auth/userinfo
 - Description: Retrieves user information using an access token.
-- Headers:
+
+Headers:
 
 ```bash
 Authorization: Bearer <access-token>
 ```
 
-- Response:
+Response:
 
 ```json
 {
@@ -169,13 +177,14 @@ Authorization: Bearer <access-token>
 
 - Endpoint: POST /auth/logout
 - Description: Logs out the user globally.
-- Headers:
+
+Headers:
 
 ```bash
 Authorization: Bearer <access-token>
 ```
 
-- Response:
+Response:
 
 ```json
 {
