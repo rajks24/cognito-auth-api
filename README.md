@@ -1,16 +1,27 @@
-# Cognito Auth API
+# Cognito Auth API – Serverless Authentication with AWS
 
-This project is a Node.js-based API that integrates with AWS Cognito for user authentication and management. It is designed to be deployed on AWS Lambda and supports Admin-based authentication flow with app secrets. The API is CORS-enabled and uses environment variables for configuration.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Node](https://img.shields.io/badge/node-18.x-brightgreen)
+![Deployed to AWS Lambda](https://img.shields.io/badge/deployed-AWS_Lambda-orange)
+![Language](https://img.shields.io/github/languages/top/rajks24/cognito-auth-api)
+
+This project is a Node.js-based custom authentication API built for integration with AWS Cognito. It’s designed to run on AWS Lambda, exposed via API Gateway, and follows the ADMIN_USER_PASSWORD_AUTH flow — making it a powerful, serverless alternative to traditional backend authentication systems.
+
+The API is fully CORS-enabled, uses environment variables for configuration, and is packaged to be easily deployed using the AWS Lambda zip upload method.
 
 ---
 
-## Features
+## ✨ Features
 
-- **User Registration**: Register new users in the Cognito User Pool.
-- **User Verification**: Confirm user sign-up using a verification code.
-- **User Login**: Authenticate users using the Admin-based authentication flow.
-- **User Info Retrieval**: Fetch user details using an access token.
-- **User Logout**: Perform global sign-out for a user.
+📝 **User Registration** – Sign up new users directly into a Cognito User Pool
+
+✅ **User Verification** – Confirm user registration via email/phone verification codes
+
+🔑 **User Login** – Authenticate users securely using the Admin-based authentication flow
+
+👤 **User Info Retrieval** – Fetch user profile details using a valid access token
+
+🚪 **User Logout** – Perform global sign-out to invalidate active sessions
 
 ---
 
